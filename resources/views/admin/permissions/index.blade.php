@@ -30,7 +30,7 @@
                     <th>ID</th>
                     <th>Identificador</th>
                     <th>Nombre</th>
-                    @can('update', $permission)
+                    @can('update', $permissions)
                     <th>Acciones</th>
                     @endcan
                 </tr>
