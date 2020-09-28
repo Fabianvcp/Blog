@@ -126,14 +126,16 @@ class UsersController extends Controller
         if ($request->file('imagen')) {
             $userPath = $request->file('imagen');
             $userImage = $userPath->getClientOriginalName();
-            $destinationPath = 'public/image/';
-            $files = $request->file('imagen');
-            $files->move($destinationPath, $userImage);
+
             $path = $request->file('imagen')->storeAs('/public/image/', $userImage, 'public');
-
-
             $user->imagen = $userImage;
             $user->path = '/storage/'.$path;
+
+            $files = $request->file('imagen');
+            $files->move('/storage/public/image/', $userImage);
+
+
+
             $user->update();
             }
         $this->authorize('update', $user);
