@@ -1,4 +1,3 @@
-
 <article class="post w-gallery">
     <div class="gallery-photos masonry" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 464 }' >
         @foreach($post->photos->take(4) as $photo)

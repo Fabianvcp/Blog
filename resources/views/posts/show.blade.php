@@ -8,7 +8,7 @@
 
 
 @section('content')
-    <article class="post container">
+    <section class="post container">
 
         @include($post->viewType())
 
@@ -33,7 +33,7 @@
                     @include('partials.disqus-script')
             </div><!-- .comments -->
         </div>
-    </article>
+    </section>
 @stop
 
 @push('style')
