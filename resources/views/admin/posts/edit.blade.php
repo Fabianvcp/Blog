@@ -23,7 +23,7 @@
                         <form method="POST" action="{{  route('admin.photos.destroy', $photo->id)  }}">
                             @csrf
                             @method('DELETE')
-                            <div class="col-md-2 col-lg-2">
+                            <div class="col-md-2 col-lg-2 col-xs-6 col-sm-6">
                                 <button class="btn btn-danger btn-xs" style="position: absolute"><i class="far fa-remove"></i></button>
                                 <img class="img-responsive" src="/storage/{{  $photo->url }}" alt="">
                             </div>

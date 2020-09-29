@@ -29,7 +29,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="posts-table" class="table table-bordered table-striped">
+            <table id="users-table" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -82,23 +82,26 @@
 <!-- bootstrap datepicker -->
 @push('style')
     <!-- DataTables -->
-    <link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
 @endpush
 
 @push('script')
 
     <!-- DataTables -->
-    <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
     <script>
         $(function () {
             $('#users-table').DataTable({
                 "responsive": true,
                 "paging": true,
-                "lengthChange": true,
                 "searching": true,
+                "lengthChange": true,
                 "ordering": true,
-                "info": true,
+                "info": false,
                 "autoWidth": true,
                 "language": {
                     "url": '//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json'

@@ -17,7 +17,7 @@
 
     <!-- /.box -->
 
-    <div class="box box-danger">
+    <div class="box box-danger content" >
         <div class="box-header">
             <h3 class="box-title">Listados publicaciones</h3>
             <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
@@ -25,8 +25,8 @@
             </button>
        </div>
         <!-- /.box-header -->
-        <div class="box-body">
-            <table id="posts-table" class="table table-bordered table-striped">
+        <div class="box-body content">
+            <table id="posts-table" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -66,28 +66,33 @@
         <!-- /.box-body -->
     </div>
     <!-- /.box -->
+
 @stop
 
 <!-- bootstrap datepicker -->
 @push('style')
     <!-- DataTables -->
-    <link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
 @endpush
 
 @push('script')
 
     <!-- DataTables -->
-    <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+
     <script>
         $(function () {
             $('#posts-table').DataTable({
                 "responsive": true,
                 "paging": true,
-                "lengthChange": true,
                 "searching": true,
+                "lengthChange": true,
                 "ordering": true,
-                "info": true,
+                "info": false,
                 "autoWidth": true,
                 "language": {
                     "url": '//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json'

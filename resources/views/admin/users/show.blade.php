@@ -2,12 +2,15 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12 ">
             <!-- Profile Image -->
             <div class="box box-danger">
                 <div class="box-body box-profile">
-
-                    <img class="profile-user-img img-responsive img-circle" src="/adminlte/img/user4-128x128.jpg" alt="{{ $user->name }}">
+                    @if( Auth::user()->path === null)
+                        <img src="/adminlte/img/user2-160x160.jpg" class="profile-user-img img-responsive img-circle" alt="User Image">
+                    @else
+                        <img src="{{ Auth::user()->path}}" class="profile-user-img img-responsive img-circle" alt="{{ Auth::user()->name}}">
+                    @endif
 
                     <h3 class="profile-username text-center">{{ $user->name }}</h3>
 
@@ -33,7 +36,7 @@
             </div>
             <!-- /.box -->
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-xs-12 col-sm-12 ">
             <div class="box box-danger">
                 <div class="box-header with-border">
                     <h3 class="box-title">Publicaciones</h3>
@@ -56,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3  col-xs-12 col-sm-12 ">
             <div class="box box-danger">
                 <div class="box-header with-border">
                     <h3 class="box-title">Roles</h3>
@@ -76,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3  col-xs-12 col-sm-12 ">
             <div class="box box-danger">
                 <div class="box-header with-border">
                     <h3 class="box-title">Permisos adicionales</h3>
